@@ -1,0 +1,10 @@
+This project already consists of more than 100 sample students' data. Here are some screenshots:
+![Screenshot (126)](https://github.com/bikalpakc/Django_ReportCard_Generator/assets/122209934/7200b999-9e95-483b-8858-c4f590a15c1f)
+![Screenshot (125)](https://github.com/bikalpakc/Django_ReportCard_Generator/assets/122209934/3902f17e-5fbb-42ee-a116-6757d651a268)
+![Screenshot (124)](https://github.com/bikalpakc/Django_ReportCard_Generator/assets/122209934/d3d86bbf-3eb5-4407-aaa9-c1667d655a2a)
+![Screenshot (123)](https://github.com/bikalpakc/Django_ReportCard_Generator/assets/122209934/6ee11ddd-c172-4f64-995f-9126402d7117)
+![Screenshot (122)](https://github.com/bikalpakc/Django_ReportCard_Generator/assets/122209934/a4b42844-58d1-45a8-853a-c16545611f55)
+![Screenshot (121)](https://github.com/bikalpakc/Django_ReportCard_Generator/assets/122209934/dc651306-fe87-4a84-a947-14ee09c83348)
+![Screenshot (120)](https://github.com/bikalpakc/Django_ReportCard_Generator/assets/122209934/3eb990e2-daf6-4a89-b49c-5d005767abe1)
+![Screenshot (119)](https://github.com/bikalpakc/Django_ReportCard_Generator/assets/122209934/9033c70a-fbbf-4421-8e9f-f7456806b26d)
+![Screenshot (118)](https://github.com/bikalpakc/Django_ReportCard_Generator/assets/122209934/6f80bd5d-936a-4586-b6a9-1002e43a1ba2)
