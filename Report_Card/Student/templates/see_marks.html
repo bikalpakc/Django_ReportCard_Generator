@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Card</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .report-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 70%;
+            max-width: 900px;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .report-card h1 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .student-info {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .student-info div {
+            flex: 1 1 45%;
+            margin-bottom: 10px;
+        }
+
+        .student-info p {
+            margin: 5px 0;
+        }
+
+        .report-card table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .report-card th,
+        .report-card td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .report-card th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        .report-card .total,
+        .report-card .rank {
+            font-weight: bold;
+        }
+
+        .report-card .total td,
+        .report-card .rank td {
+            background-color: #f9f9f9;
+        }
+
+        .report-card .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="report-card">
+        <h1>Report Card</h1>
+        <div class="student-info">
+
+            <div>
+                <p><strong>Name:</strong> {{queryset.first.student}}</p>
+            </div>
+            <div>
+                <p><strong>Student ID:</strong>{{queryset.first.student.student_id}}</p>
+            </div>
+            <div>
+                <p><strong>Department:</strong>{{queryset.first.student.department}} </p>
+            </div>
+            <div>
+                <p><strong>Email:</strong>{{queryset.first.student.student_email}}</p>
+            </div>
+            <div>
+                <p><strong>Age:</strong> {{queryset.first.student.student_age}}</p>
+            </div>
+
+        </div>
+        <table>
+            <tr>
+                <th>Subject</th>
+                <th>Marks</th>
+            </tr>
+            {% for marks in queryset %}
+            <tr>
+                <td>{{marks.subject.subject_name}}</td>
+                <td>{{marks.marks}}</td>
+            </tr>
+
+            {% endfor %}
+            <tr class="total">
+                <td>Total Marks</td>
+                <td>{{total_marks.total_marks}}</td>
+            </tr>
+            <tr class="rank">
+                <td>Rank</td>
+                <td>{{current_rank}}</td>
+            </tr>
+        </table>
+        <div class="footer">
+            <p>Keep up the good work!</p>
+        </div>
+    </div>
+</body>
+
+</html>

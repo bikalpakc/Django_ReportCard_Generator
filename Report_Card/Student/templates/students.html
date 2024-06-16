@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Striped Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-buttons a {
+            text-decoration: none;
+            color: white;
+            background-color: #007BFF;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-buttons a:hover {
+            background-color: #0056b3;
+        }
+
+        .nav-buttons a:active {
+            background-color: #00408d;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <form class="mb-4">
+            <div class="row">
+                <input class="form-control" name="search" placeholder="Search">
+            </div>
+
+            <div class="col-md-6">
+                <button class="btn btn-success">Search</button>
+
+            </div>
+
+
+        </form>
+
+
+
+
+
+    </div>
+
+    <h2>Student Information</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>student_id</th>
+                <th>Department</th>
+                <th>student_name</th>
+                <th>student_email</th>
+                <th>student_age</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in queryset %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td><a href="{% url 'see_marks' student.student_id %}">{{student.student_id}}</a></td>
+                <td>{{student.department}}</td>
+                <td>{{student.student_name}}</td>
+                <td>{{student.student_email}}</td>
+                <td>{{student.student_age}}</td>
+            </tr>
+            {% endfor %}
+
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+
+    <div style="height: 25px;"></div>
+    <div class="nav-buttons" style="position: absolute; left: 500px;">
+        <span class="step-links">
+            {% if queryset.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ queryset.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ queryset.number }} of {{ queryset.paginator.num_pages }}.
+            </span>
+
+            {% if queryset.has_next %}
+            <a href="?page={{ queryset.next_page_number }}">next</a>
+            <a href="?page={{ queryset.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</body>
+
+</html>
